@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'apt'
+cookbook 'nodejs'
+cookbook 'memcached'
+cookbook 'logrotate'
+cookbook 'mysql'
+
+cookbook 'ohai'
+cookbook 'openssl'
+cookbook 'sudo'
+
+cookbook "redis", :github =>"ctrabold/chef-redis"
+cookbook 'rbenv', :github => "arrowcircle/chef-rbenv"
+cookbook 'postgresql', :github => "phlipper/chef-postgresql"
+cookbook 'users', :github => "arrowcircle/chef-users"
+cookbook 'nginx', :github => "arrowcircle/chef-nginx"
+
+cookbook 'rails-stack', :github => "arrowcircle/chef-rails-stack"

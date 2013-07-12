@@ -1,0 +1,35 @@
+{
+  "json_class": "Chef::Role",
+  "name": "mri-2.0.0-p247_postgres_unicorn",
+  "description": "Rails application server testapp",
+  "run_list": ["recipe[rails-stack]"],
+  "default_attributes": {
+    "nginx": {
+      "version": "1.4.1",
+      "init_style": "init"
+    },
+    "apps":
+      [
+        {
+          "name": "YOUR_APP_NAME",
+          "user": "YOUR_APP_USER",
+          "ruby_version": "2.0.0-p247",
+          "domain_name": "DOMAIN_NAME",
+          "authorized_keys": ["YOUR_SSH_KEY"],
+          "app_server": {
+            "type": "unicorn",
+            "timeout": "50",
+            "workers": "2"
+          },
+          "database": {
+            "dbname": "DBNAME_production",
+            "server": true,
+            "type": "postgresql",
+            "username": "DB_USERNAME",
+            "password": "DB_PASSWORD",
+            "host": "localhost"
+          }
+        }
+      ]
+  }
+}

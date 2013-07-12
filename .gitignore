@@ -1,0 +1,8 @@
+/.rvmrc
+/.ruby-version
+/.ruby-gemset
+*DS_Store
+/cookbooks
+/nodes/*
+/tmp
+/scripts

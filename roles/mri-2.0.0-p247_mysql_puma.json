@@ -1,0 +1,41 @@
+{
+  "json_class": "Chef::Role",
+  "name": "mri-2.0.0-p247_mysql_puma",
+  "description": "Rails application server testapp",
+  "run_list": ["recipe[rails-stack]"],
+  "default_attributes": {
+    "nginx": {
+      "version": "1.4.1",
+      "init_style": "init"
+    },
+    "mysql": {
+      "server_debian_password": "123123",
+      "server_root_password": "123123",
+      "server_repl_password": "123123"
+    },
+    "apps":
+      [
+        {
+          "name": "YOUR_APP_NAME",
+          "user": "YOUR_APP_USER",
+          "ruby_version": "2.0.0-p247",
+          "domain_name": "DOMAIN_NAME",
+          "authorized_keys": ["YOUR_SSH_KEY"],
+          "app_server": {
+            "type": "puma",
+            "min_threads": "0",
+            "max_threads": "16",
+            "workers": "0"
+          },
+          "database": {
+            "dbname": "DBNAME_production",
+            "server": true,
+            "type": "mysql",
+            "username": "DB_USERNAME",
+            "password": "DB_PASSWORD",
+            "host": "localhost"
+          }
+        }
+      ]
+  }
+}
