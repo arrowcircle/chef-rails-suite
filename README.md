@@ -9,6 +9,8 @@ Clone rails-suite to YOUR_DIR_NAME ('redde_servers' for example):
 	git clone https://github.com/arrowcircle/chef-rails-suite.git YOUR_DIR_NAME
 	cd YOUR_DIR_NAME
 	gem install chef librarian-chef knife-solo
+
+Please use knife-solo version 0.3.0 or higher.
 	
 # Usage
 Enter roles directory:
