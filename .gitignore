@@ -6,3 +6,4 @@
 /nodes/*
 /tmp
 /scripts
+/Cheffile.lock

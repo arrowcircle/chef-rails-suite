@@ -8,14 +8,19 @@
       "version": "1.4.1",
       "init_style": "init"
     },
+    "users": [
+     {
+      "user": "YOUR_APP_USER",
+      "authorized_keys": ["YOUR_SSH_KEY"]
+     }
+    ],
     "apps":
       [
         {
           "name": "YOUR_APP_NAME",
           "user": "YOUR_APP_USER",
           "ruby_version": "2.0.0-p247",
-          "domain_name": "DOMAIN_NAME",
-          "authorized_keys": ["YOUR_SSH_KEY"],
+          "domain_names": ["DOMAIN_NAME"],
           "app_server": {
             "type": "unicorn",
             "timeout": "50",

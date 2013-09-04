@@ -13,14 +13,19 @@
       "server_root_password": "123123",
       "server_repl_password": "123123"
     },
+    "users": [
+     {
+      "user": "YOUR_APP_USER",
+      "authorized_keys": ["YOUR_SSH_KEY"]
+     }
+    ],
     "apps":
       [
         {
           "name": "YOUR_APP_NAME",
           "user": "YOUR_APP_USER",
           "ruby_version": "2.0.0-p247",
-          "domain_name": "DOMAIN_NAME",
-          "authorized_keys": ["YOUR_SSH_KEY"],
+          "domain_names": ["DOMAIN_NAME"],
           "app_server": {
             "type": "puma",
             "min_threads": "0",

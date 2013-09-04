@@ -40,14 +40,19 @@ Open SERVER_NAME.json with favorite editor:
           "version": "1.4.1",
           "init_style": "init"
         },
+        "users": [
+         {
+          "user": "YOUR_APP_USER",
+          "authorized_keys": ["YOUR_SSH_KEY"]
+         }
+        ],
         "apps":
           [
             {
               "name": "YOUR_APP_NAME",
               "user": "YOUR_APP_USER",
               "ruby_version": "2.0.0-p247",
-              "domain_name": "DOMAIN_NAME",
-              "authorized_keys": ["YOUR_SSH_KEY"],
+              "domain_names": ["DOMAIN_NAME"],
               "app_server": {
                 "type": "unicorn",
                 "timeout": "50",
@@ -68,6 +73,14 @@ Open SERVER_NAME.json with favorite editor:
     
 Change `name` attribute to SERVER_NAME
 
+`users` is an array containing info about users
+
+Each user have these attributes:
+
+* `user` username of the user
+* `authorized_keys` contains array of ssh keys. Put needed keys here
+* `known_hosts` contains array of known_hosts
+
 `apps` is an array containing info about your applications
 
 Each app have these attributes:
@@ -75,8 +88,7 @@ Each app have these attributes:
 * `name` is the name of the app. This attribute will be used as folder for deploy
 * `user` is os user name
 * `ruby_version` is ruby version to install. Default is *2.0.0-p247*
-* `domain_name` is domain name used in nginx config. User without www (eg 'redde.ru')
-* `authorized_keys` contains array of ssh keys. Put needed keys here
+* `domain_names` is domain names array used in nginx config. Use without www (eg 'redde.ru')
 * `app_server` block used to describe application server to use. `type` can be `unicorn` and `puma`.
 
 For `unicorn` you can tune `timeout` and `workers` (Used inside unicorn.rb)
