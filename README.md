@@ -13,9 +13,9 @@ Clone rails-suite to YOUR_DIR_NAME ('redde_servers' for example):
 Please use knife-solo version 0.3.0 or higher.
 	
 # Usage
-Enter roles directory:
+Choose template:
 
-	cd YOUR_DIR_NAME/roles
+	ls sample_roles
 	
 This directory contains skeletons for your servers named like:
 
@@ -26,7 +26,7 @@ This directory contains skeletons for your servers named like:
 	
 Choose desired skeleton for your server and copy it:
 
-	cp mri-2.0.0-p247_postgres_unicorn.json SERVER_NAME.json
+	cp sample_roles/mri-2.0.0-p247_postgres_unicorn.json roles/SERVER_NAME.json
 	
 Open SERVER_NAME.json with favorite editor:
 
